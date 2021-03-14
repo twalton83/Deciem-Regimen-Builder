@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const HeaderStyles = styled.header`
@@ -34,6 +35,8 @@ color: #FFFFFF;
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.primaryText}
     }
+
+    transition: background-color 1s;
   }
 
 `
@@ -41,11 +44,15 @@ color: #FFFFFF;
 export default function Header() {
   return (
     <HeaderStyles>
-      <h1>Deciem Regiment Builder</h1>
+      <NavLink to="/">
+        <h1>Deciem Regiment Builder</h1>
+      </NavLink>
       <div className="button-container">
-        <button>
-          Shop
-        </button>
+        <NavLink to="/shop">
+          <button>
+            Shop
+          </button>
+        </NavLink>
         <button>
           Cart
         </button>
