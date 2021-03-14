@@ -1,10 +1,17 @@
 import React from 'react';
-import './App.css';
+import Header from './components/Header/Header'
+import { ThemeProvider } from 'styled-components'
+import theme from './context/ThemeContext'
 
 function App() {
   return (
-    <div className="App">
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header>
+          <p>Deciem Regiment Builder</p>
+        </Header>
+      </div>
+    </ThemeProvider>
   );
 }
 
