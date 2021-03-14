@@ -12,32 +12,49 @@ height: 64px;
 background-color: ${props => props.theme.secondaryBgColor};
 color: #FFFFFF;
 
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
   h1{
     text-transform: uppercase;
     font-weight: 300;
   }
   
-  .button-container {
-    height: 100%
+  nav {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
   }
 
-  button {
+  nav > a {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     height: 100%;
+    padding: 0 16px;
 
     background-color: ${props => props.theme.secondaryBgColor};
     color: #FFFFFF;
-
     border: none;
 
     font-size: 1.5rem;
 
     &:hover {
       background-color: ${props => props.theme.bgColor};
-      color: ${props => props.theme.primaryText}
+      color: ${props => props.theme.primaryText};
     }
 
     transition: background-color 1s;
   }
+
+  .current {
+      background-color: ${props => props.theme.bgColor};
+      color: ${props => props.theme.primaryText};
+    }
 
 `
 
@@ -47,16 +64,14 @@ export default function Header() {
       <NavLink to="/">
         <h1>Deciem Regiment Builder</h1>
       </NavLink>
-      <div className="button-container">
-        <NavLink to="/shop">
-          <button>
-            Shop
-          </button>
+      <nav>
+        <NavLink activeClassName="current" to="/shop">
+          Shop
         </NavLink>
-        <button>
+        <NavLink activeClassName="current" to="/cart">
           Cart
-        </button>
-      </div>
+        </NavLink>
+      </nav>
     </HeaderStyles>
   )
 }

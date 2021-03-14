@@ -5,6 +5,7 @@ import theme from './context/ThemeContext'
 import { Switch, Route } from 'react-router';
 import InventoryDisplay from './components/InventoryDisplay/InventoryDisplay'
 import Landing from './components/Landing/Landing'
+import Cart from './components/Cart/Cart'
 import "./App.css"
 
 function App() {
@@ -18,8 +19,11 @@ function App() {
           <Route exact path="/">
             <Landing />
           </Route>
-          <Route exact path="/shop" component={InventoryDisplay}>
+          <Route exact path="/shop">
             <InventoryDisplay />
+          </Route>
+          <Route exact path="/cart">
+            <Cart />
           </Route>
         </Switch>
       </div>
