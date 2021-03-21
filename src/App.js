@@ -5,16 +5,20 @@ import theme from './context/ThemeContext'
 
 import "./App.css"
 import Router from './components/Router/Router';
+import { CartProvider } from './context/CartContext'
+import { reducer } from './context/CartReducer'
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Header>
-          <p>Deciem Regiment Builder</p>
-        </Header>
-        <Router />
-      </div>
+      <CartProvider>
+        <div className="App">
+          <Header>
+            <p>Deciem Regiment Builder</p>
+          </Header>
+          <Router />
+        </div>
+      </CartProvider>
     </ThemeProvider>
   );
 }

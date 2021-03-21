@@ -4,7 +4,6 @@ function findProduct(name) {
   const item = name.replaceAll('-', ' ')
     .replaceAll('pct', '%')
     .replaceAll('plus', '+')
-  console.log(item)
   return products.filter((product) => item === product.name)[0]
 }
 
