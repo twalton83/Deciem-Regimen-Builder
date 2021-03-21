@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
+import { CartContext } from '../../context/CartContext'
 
 const ProductDisplayStyles = styled.div`
 display: flex;
@@ -107,6 +108,8 @@ width: 90px;
 export default function ProductDisplay({ item }) {
   const [quantity, setQuantity] = useState(1);
 
+  const { cart, dispatch } = useContext(CartContext)
+
   const handleChange = (e) => {
     if (quantity === 0 && e.target.id !== "add") return
     e.target.id === "add" ? setQuantity(quantity + 1) : setQuantity(quantity - 1)
@@ -139,8 +142,12 @@ export default function ProductDisplay({ item }) {
           </Incrementer>
         </div>
       </div>
-
-      <button className="atc">
+      <button className="atc" onClick={() => dispatch({
+        type: "ADD",
+        payload: {
+          item, quantity
+        }
+      })}>
         ADD TO BASKET
       </button>
     </ProductDisplayStyles>

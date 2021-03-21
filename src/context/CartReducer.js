@@ -1,14 +1,16 @@
-function add(state) {
-  console.log('adding!!!')
+function add(state, payload) {
+  return {
+    ...state,
+    cart: [...state.cart, payload]
+  }
+}
+
+function update(state, payload) {
   return state
 }
 
-function update(state) {
-  return state
-}
-
-function remove(state) {
-  return state
+function remove(state, payload) {
+  return state.filter(item => item.name !== payload.item.name)
 }
 
 function reducer(state, action) {

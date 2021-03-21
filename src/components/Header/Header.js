@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import { CartContext } from '../../context/CartContext'
 
 const HeaderStyles = styled.header`
 display: flex;
@@ -70,6 +71,8 @@ color: #FFFFFF;
 `
 
 export default function Header() {
+  const { state, dispatch } = useContext(CartContext)
+
   return (
     <HeaderStyles>
       <NavLink to="/">
@@ -80,6 +83,9 @@ export default function Header() {
           Shop
         </NavLink>
         <NavLink className="cart" activeClassName="current" to="/cart">
+          {state.cart.length > 0 && <span className="item-count">
+            {state.cart.length}
+          </span>}
           Cart
         </NavLink>
       </nav>
