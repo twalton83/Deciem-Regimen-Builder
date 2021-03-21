@@ -8,9 +8,12 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
-height: 64px;
+height: auto;
+max-height: 15vh;
 background-color: ${props => props.theme.secondaryBgColor};
 color: #FFFFFF;
+
+ 
 
   a {
     text-decoration: none;
@@ -20,12 +23,21 @@ color: #FFFFFF;
   h1{
     text-transform: uppercase;
     font-weight: 300;
+    font-size: 24px;
   }
   
   nav {
     height: 100%;
     display: flex;
     flex-direction: row;
+
+    .shop {
+    display: none;
+
+    @media(min-width: 760px){
+      display: block;
+    }
+  }
   }
 
   nav > a {
@@ -65,10 +77,10 @@ export default function Header() {
         <h1>Deciem Regiment Builder</h1>
       </NavLink>
       <nav>
-        <NavLink activeClassName="current" to="/shop">
+        <NavLink className="shop" activeClassName="current" to="/shop">
           Shop
         </NavLink>
-        <NavLink activeClassName="current" to="/cart">
+        <NavLink className="cart" activeClassName="current" to="/cart">
           Cart
         </NavLink>
       </nav>

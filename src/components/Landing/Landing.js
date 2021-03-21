@@ -5,6 +5,7 @@ import BalanceSet from '../../images/carousel/rdn-balance-set.png'
 
 const LandingStyles = styled.div`
 height: 100%;
+max-height: 85vh;
 
 padding: 16px;
 
@@ -13,8 +14,6 @@ flex-direction: column;
 justify-content: space-evenly;
 
   .text-container {
-
-
 
     .tagline {
       max-width: 196px;
@@ -37,6 +36,7 @@ background-color: #DED7D3;
 border: none;
 height: 36px;
 font-size: 24px;
+margin: 16px 0;
 
 a {
   text-decoration: none;
@@ -57,7 +57,7 @@ export default function Landing() {
           The <span>Ordinary.</span>
         </p>
         <Button>
-          <Link path="/shop">
+          <Link to="/shop">
             SHOP NOW
         </Link>
         </Button>
