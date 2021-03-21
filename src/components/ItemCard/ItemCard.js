@@ -30,7 +30,7 @@ flex-direction: column;
 export default function ItemCard({ item }) {
   return (
     <ItemCardStyles>
-      <Link to={`/item/${encodeURIComponent(item.name.split(" ").join("-"))}`}>
+      <Link to={"/item/" + encodeURIComponent(item.name)}>
         <img src={item.image} alt="" />
         <p className="name">
           {item.name}

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import data from '../../product-data/products'
+import products from '../../product-data/products'
 import ItemCard from '../ItemCard/ItemCard'
 
 const InventoryDisplayStyles = styled.div`
@@ -19,7 +19,7 @@ export default function InventoryDisplay() {
     <InventoryDisplayStyles>
       <h1 style={{ color: "black" }}>Products</h1>
       <div className="product-container">
-        {data.products.map((product) => (
+        {products.map((product) => (
           <ItemCard item={product} />
         ))}
       </div>
