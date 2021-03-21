@@ -6,11 +6,16 @@ const ItemCardStyles = styled.div`
 display: flex;
 flex-direction: column;
 
+  a{
+    text-decoration: none;
+  }
+
   img {
     width: 100%;
   }
 
   .name{
+    color: ${props => props.theme.primaryText};
     font-weight: 600;
   }
 
@@ -25,7 +30,7 @@ flex-direction: column;
 export default function ItemCard({ item }) {
   return (
     <ItemCardStyles>
-      <Link to={`/item/${item.name}`}>
+      <Link to={`/item/${encodeURIComponent(item.name.split(" ").join("-"))}`}>
         <img src={item.image} alt="" />
         <p className="name">
           {item.name}
