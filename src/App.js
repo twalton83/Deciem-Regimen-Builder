@@ -2,11 +2,9 @@ import React from 'react';
 import Header from './components/Header/Header'
 import { ThemeProvider } from 'styled-components'
 import theme from './context/ThemeContext'
-import { Switch, Route } from 'react-router';
-import InventoryDisplay from './components/InventoryDisplay/InventoryDisplay'
-import Landing from './components/Landing/Landing'
-import Cart from './components/Cart/Cart'
+
 import "./App.css"
+import Router from './components/Router/Router';
 
 function App() {
   return (
@@ -15,19 +13,8 @@ function App() {
         <Header>
           <p>Deciem Regiment Builder</p>
         </Header>
-        <Switch>
-          <Route exact path="/">
-            <Landing />
-          </Route>
-          <Route exact path="/shop">
-            <InventoryDisplay />
-          </Route>
-          <Route exact path="/cart">
-            <Cart />
-          </Route>
-        </Switch>
+        <Router />
       </div>
-
     </ThemeProvider>
   );
 }
