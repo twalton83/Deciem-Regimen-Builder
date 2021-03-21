@@ -9,6 +9,7 @@ padding: 16px;
   .product-container {
     display: grid;
     grid-template-columns: 50% 50%;
+    grid-gap: 12px;
   }
 
 min-height: 85vh;
@@ -20,7 +21,7 @@ export default function InventoryDisplay() {
       <h1 style={{ color: "black" }}>Products</h1>
       <div className="product-container">
         {products.map((product) => (
-          <ItemCard item={product} />
+          <ItemCard key={product.name} item={product} />
         ))}
       </div>
     </InventoryDisplayStyles>

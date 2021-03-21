@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { createURL } from '../../product-data/helpers';
 
 const ItemCardStyles = styled.div`
 display: flex;
@@ -28,9 +29,11 @@ flex-direction: column;
 `
 
 export default function ItemCard({ item }) {
+
   return (
     <ItemCardStyles>
-      <Link to={"/item/" + encodeURIComponent(item.name)}>
+
+      <Link to={"/item/" + createURL(item.name)}>
         <img src={item.image} alt="" />
         <p className="name">
           {item.name}
