@@ -108,7 +108,7 @@ width: 90px;
 export default function ProductDisplay({ item }) {
   const [quantity, setQuantity] = useState(1);
 
-  const { cart, dispatch } = useContext(CartContext)
+  const { state, dispatch } = useContext(CartContext)
 
   const handleChange = (e) => {
     if (quantity === 0 && e.target.id !== "add") return
@@ -142,6 +142,8 @@ export default function ProductDisplay({ item }) {
           </Incrementer>
         </div>
       </div>
+      {/* TO DO: grey out the screen if it's already in cart */}
+      {/* perhaps a hook useCartCheck? */}
       <button className="atc" onClick={() => dispatch({
         type: "ADD",
         payload: {

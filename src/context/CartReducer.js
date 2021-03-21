@@ -1,7 +1,8 @@
 function add(state, payload) {
+  const { item, quantity } = payload
   return {
     ...state,
-    cart: [...state.cart, payload]
+    cart: [...state.cart, item]
   }
 }
 
@@ -10,7 +11,10 @@ function update(state, payload) {
 }
 
 function remove(state, payload) {
-  return state.filter(item => item.name !== payload.item.name)
+  return {
+    ...state,
+    cart: state.cart.filter(item => item.name !== payload.item.name)
+  }
 }
 
 function reducer(state, action) {
@@ -20,7 +24,7 @@ function reducer(state, action) {
       return add(state, payload);
     case 'UPDATE':
       return update(state, payload);
-    case 'remove':
+    case 'REMOVE':
       return remove(state, payload);
     default:
       return { ...state };
