@@ -8,8 +8,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
-height: auto;
-max-height: 15vh;
+height: 10vh;
 background-color: ${props => props.theme.secondaryBgColor};
 color: #FFFFFF;
 
