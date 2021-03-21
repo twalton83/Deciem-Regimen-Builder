@@ -1,14 +1,28 @@
 import React from 'react'
-import data from '../../product-data/products.json'
+import styled from 'styled-components'
+import data from '../../product-data/products'
 import ItemCard from '../ItemCard/ItemCard'
+
+const InventoryDisplayStyles = styled.div`
+padding: 16px;
+
+  .product-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+min-height: 85vh;
+`
 
 export default function InventoryDisplay() {
   return (
-    <div>
-      <h1 style={{ color: "black" }}>SHOP</h1>
-      {data.products.map((product) => (
-        <ItemCard item={product} />
-      ))}
-    </div>
+    <InventoryDisplayStyles>
+      <h1 style={{ color: "black" }}>Products</h1>
+      <div className="product-container">
+        {data.products.map((product) => (
+          <ItemCard item={product} />
+        ))}
+      </div>
+    </InventoryDisplayStyles>
   )
 }

@@ -1,29 +1,31 @@
-{
+
+
+export default {
   "products": [
     {
       "name": "test",
       "price": "5.99",
-      "image": "../../images/carousel/rdn-balance-set.png"
+      "image": "/assets/rdn-balance-set.png"
     },
     {
       "name": "test",
       "price": "5.99",
-      "image": "../../images/carousel/rdn-balance-set.png"
+      "image": "/assets/rdn-balance-set.png"
     },
     {
       "name": "test",
       "price": "5.99",
-      "image": "../../images/carousel/rdn-balance-set.png"
+      "image": "/assets/rdn-balance-set.png"
     },
     {
       "name": "test",
       "price": "5.99",
-      "image": "../../images/carousel/rdn-balance-set.png"
+      "image": "/assets/rdn-balance-set.png"
     },
     {
       "name": "test",
       "price": "5.99",
-      "image": "../../images/carousel/rdn-balance-set.png"
+      "image": "/assets/rdn-balance-set.png"
     }
   ]
 }
