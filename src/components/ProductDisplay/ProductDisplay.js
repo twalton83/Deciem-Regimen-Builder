@@ -13,14 +13,13 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 
+
 @media(min-width: 768px){
   display: grid;
-  grid-template-columns: 100px auto auto;
+  grid-template-columns: 1fr auto auto 1fr;
 
-  &.mobile {
-    @media(min-width: 768px){
+  .mobile {
       display: none;
-    }
   }
 
 }
@@ -28,9 +27,13 @@ justify-content: space-between;
 height: 90vh;
 
   .info-container {
+
+    margin-top: 10%;
+
     @media(min-width: 768px){
       display: grid;
       grid-template-columns: 50% 50%;
+      grid-column: 2/3;
 
     } 
 
@@ -148,7 +151,7 @@ width: 90px;
 
   button {
     width: 100%;
-    
+
     font-weight: 600;
     font-size: 24px;
 

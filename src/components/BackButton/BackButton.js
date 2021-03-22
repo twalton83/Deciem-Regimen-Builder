@@ -12,6 +12,10 @@ const BackButtonStyles = styled.button`
     background-color: transparent;
     border: none;
     text-decoration: underline;
+
+  @media(min-width: 768px){
+    display: none;
+  }
 `
 
 export default function BackButton() {
