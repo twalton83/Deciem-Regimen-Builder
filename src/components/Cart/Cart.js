@@ -7,18 +7,22 @@ const CartStyles = styled.div`
 display: flex;
 flex-direction: column;
 
+padding: 16px;
 `
 
 
 export default function Cart() {
-  const { state, dispatch } = useContext(CartContext)
+  const { state } = useContext(CartContext)
 
 
   return (
     <CartStyles>
       {state.cart.map(item => (
-        <CartItem item={item} />
+        <CartItem key={`${item.name}${item.quantity}`} item={item} />
       ))}
+      <p>
+        Total: {state.total}
+      </p>
     </CartStyles>
   )
 }

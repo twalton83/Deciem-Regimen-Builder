@@ -1,9 +1,10 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useReducer, useEffect } from 'react'
 import reducer from './CartReducer'
 
 export const CartContext = createContext()
 
 const initialState = {
+  total: 0,
   cart: [{
     "name": "Lactic Acid 10% + HA",
     "price": "6.80",
@@ -81,6 +82,20 @@ const initialState = {
 
 export function CartProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    const total = state.cart.reduce((acc, curr) => {
+      return acc += parseInt(curr.price)
+    }, 0)
+
+    dispatch({
+      type: 'UPDATE-TOTAL',
+      payload: total
+    })
+
+  }, [state.cart])
+
+
   return (
     <CartContext.Provider value={{ state, dispatch }}>
       {children}

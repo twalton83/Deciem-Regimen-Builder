@@ -18,6 +18,13 @@ function update(state, payload) {
   return { ...state, cart: updatedCart }
 }
 
+function updateTotal(state, payload) {
+  console.log('updating')
+  return {
+    ...state, total: payload
+  }
+}
+
 function remove(state, payload) {
   return {
     ...state,
@@ -34,6 +41,8 @@ function reducer(state, action) {
       return update(state, payload);
     case 'REMOVE':
       return remove(state, payload);
+    case 'UPDATE-TOTAL':
+      return updateTotal(state, payload)
     default:
       return { ...state };
   }
