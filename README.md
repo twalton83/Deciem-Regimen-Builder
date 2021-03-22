@@ -8,3 +8,7 @@ NOTE: I am in no way, shape, or form associated with Deciem, or any of the Decie
 ## How to Run
 
 Clone this repository, run `yarn install`, and once the dependencies have been installed, run `yarn start`. 
+
+# Attributions
+
+<div>Cart Icon made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

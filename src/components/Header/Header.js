@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
+import { ReactComponent as Cart } from './shopping-cart.svg'
 
 const HeaderStyles = styled.header`
 display: flex;
@@ -12,8 +13,6 @@ justify-content: space-between;
 height: 10vh;
 background-color: ${props => props.theme.secondaryBgColor};
 color: #FFFFFF;
-
- 
 
   a {
     text-decoration: none;
@@ -63,10 +62,34 @@ color: #FFFFFF;
     transition: background-color 1s;
   }
 
+  svg {
+    fill: white;
+    height: 36px;
+  }
+
+  .item-count {
+    top: 5px;
+    right: 0;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    border: none;
+    width: 26px;
+    height: 26px;
+
+    font-size: 20px;
+    text-align: center;
+  }
+
   .current {
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.primaryText};
+
+
     }
+
+
 
 `
 
@@ -86,7 +109,7 @@ export default function Header() {
           {state.cart.length > 0 && <span className="item-count">
             {state.cart.length}
           </span>}
-          Cart
+          <Cart />
         </NavLink>
       </nav>
     </HeaderStyles>
