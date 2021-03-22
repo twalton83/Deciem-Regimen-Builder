@@ -113,7 +113,7 @@ export default function ProductDisplay({ item }) {
   const contraindications = useContraindications()
 
   const [quantity, setQuantity] = useState(1);
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
 
   const { state, dispatch } = useContext(CartContext)
 
@@ -168,7 +168,13 @@ export default function ProductDisplay({ item }) {
       <button className="atc" onClick={handleClick}>
         ADD TO BASKET
       </button>
-      {modal && <Modal />}
+      {modal && <Modal submit={() => dispatch({
+        type: "ADD",
+        payload: {
+          item, quantity
+        }
+      })}
+        toggleModal={() => setModal(!modal)} />}
 
     </ProductDisplayStyles>
   )
