@@ -25,6 +25,7 @@ color: #FFFFFF;
     text-transform: uppercase;
     font-weight: 300;
     font-size: 24px;
+    line-height: 24px;
   }
   
   nav {

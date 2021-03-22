@@ -13,6 +13,17 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 
+@media(min-width: 768px){
+
+  flex-direction: row-reverse;
+  align-items: center;
+  
+  img{
+    max-width: 50vw;
+  }
+        
+}
+
   .text-container {
 
     .tagline {
