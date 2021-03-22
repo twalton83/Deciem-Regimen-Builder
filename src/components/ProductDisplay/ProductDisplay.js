@@ -1,10 +1,11 @@
 import React, { useState, useContext } from 'react'
-import { useHistory } from 'react-router-dom';
+
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
 import { useContraindications } from '../../product-data/hooks'
 import { isCompatible } from '../../product-data/helpers'
 import Modal from '../Modal/Modal';
+import BackButton from '../BackButton/BackButton'
 
 
 const ProductDisplayStyles = styled.div`
@@ -59,17 +60,7 @@ height: 90vh;
 
   border: none;
 }
-  .back {
-    width: 50px;
 
-    font-size: 20px;
-    font-weight: 500;
-    color: #a3a09b;
-    
-    background-color: transparent;
-    border: none;
-    text-decoration: underline;
-  }
 `
 
 const Incrementer = styled.div`
@@ -115,7 +106,7 @@ export default function ProductDisplay({ item }) {
   const [quantity, setQuantity] = useState(1);
   const [modal, setModal] = useState(false);
 
-  const { state, dispatch } = useContext(CartContext)
+  const { dispatch } = useContext(CartContext)
 
   const handleChange = (e) => {
     if (quantity === 0 && e.target.id !== "add") return
@@ -136,13 +127,9 @@ export default function ProductDisplay({ item }) {
   }
 
 
-  let history = useHistory()
-
   return (
     <ProductDisplayStyles>
-      <button className="back" onClick={() => history.goBack()}>
-        {'<<<'}
-      </button>
+      <BackButton />
       <div className="info-container">
         <h1>
           {item.name}

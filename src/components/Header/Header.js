@@ -14,6 +14,7 @@ height: 10vh;
 background-color: ${props => props.theme.secondaryBgColor};
 color: #FFFFFF;
 
+
   a {
     text-decoration: none;
     color: inherit;
@@ -68,8 +69,8 @@ color: #FFFFFF;
   }
 
   .item-count {
-    top: 5px;
-    right: 0;
+    top: 8px;
+    right: 8px;
     position: absolute;
     background-color: white;
     color: black;
