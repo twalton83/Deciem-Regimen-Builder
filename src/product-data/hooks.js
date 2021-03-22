@@ -7,8 +7,8 @@ function useContraindications() {
   const { state } = useContext(CartContext)
 
   useEffect(() => {
+    console.log('firing')
     function gatherContraindications(items) {
-      console.log(items)
       // TO DO, avoid duplicates, use .reduce()
       return items.map(item => item.contraindications).flat()
     }
@@ -16,6 +16,7 @@ function useContraindications() {
   }, [state.cart])
   return contraindications
 }
+
 
 export {
   useContraindications

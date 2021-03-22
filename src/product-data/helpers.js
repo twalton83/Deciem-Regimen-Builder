@@ -13,10 +13,14 @@ function createURL(name) {
     .replaceAll('+', 'plus')
 }
 
+function isCompatible(item, contraindications) {
+  return contraindications.includes(item.name) || contraindications.some(c => item.category.includes(c))
+}
 
 
 
 export {
   findProduct,
   createURL,
+  isCompatible
 }
