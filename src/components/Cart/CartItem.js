@@ -43,11 +43,8 @@ label {
 
 export default function CartItem({ item }) {
   const { dispatch } = useContext(CartContext)
-  const [quantity, setQuantity] = useState(item.quantity);
 
   const handleChange = (e) => {
-    setQuantity(parseInt(e.target.value))
-
     dispatch({
       type: "UPDATE",
       payload: {
