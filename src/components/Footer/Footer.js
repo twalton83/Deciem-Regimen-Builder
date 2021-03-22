@@ -7,6 +7,8 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 
+
+
 position: absolute;
 bottom: 0;
 

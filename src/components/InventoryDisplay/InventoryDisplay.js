@@ -12,9 +12,18 @@ padding: 16px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-gap: 12px;
+
+    padding-bottom: 15vh;
+
+    @media(min-width: 768px){
+      grid-template-columns: repeat(4, 1fr)
+    }
   }
 
 min-height: 85vh;
+max-height: 85vh;
+
+overflow-y: scroll;
 `
 
 export default function InventoryDisplay() {
