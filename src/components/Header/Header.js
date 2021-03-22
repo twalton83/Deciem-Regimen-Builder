@@ -18,6 +18,7 @@ color: #FFFFFF;
   a {
     text-decoration: none;
     color: inherit;
+    line-height: 10vh;
   }
 
   h1{
@@ -82,6 +83,8 @@ color: #FFFFFF;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+
+    line-height: 26px;
   }
 
   .current {
