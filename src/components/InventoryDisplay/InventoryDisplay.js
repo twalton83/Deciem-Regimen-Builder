@@ -25,7 +25,7 @@ export default function InventoryDisplay() {
       <h1 style={{ color: "black" }}>Products</h1>
       <div className="product-container">
         {products.map((product) => (
-          <ItemCard key={product.name} item={product} contraindication={contraindications.length > 0 ? isCompatible(product, contraindications) : false} />
+          <ItemCard key={product.name} item={product} contraindication={contraindications.length > 0 ? isCompatible(product, contraindications) : null} />
         ))}
       </div>
     </InventoryDisplayStyles>

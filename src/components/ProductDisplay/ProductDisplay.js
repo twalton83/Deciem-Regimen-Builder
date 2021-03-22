@@ -2,6 +2,10 @@ import React, { useState, useContext } from 'react'
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
+import { useContraindications } from '../../product-data/hooks'
+import { isCompatible } from '../../product-data/helpers'
+import Modal from '../Modal/Modal';
+
 
 const ProductDisplayStyles = styled.div`
 display: flex;
@@ -106,7 +110,10 @@ width: 90px;
 
 
 export default function ProductDisplay({ item }) {
+  const contraindications = useContraindications()
+
   const [quantity, setQuantity] = useState(1);
+  const [modal, setModal] = useState(false);
 
   const { state, dispatch } = useContext(CartContext)
 
@@ -114,6 +121,20 @@ export default function ProductDisplay({ item }) {
     if (quantity === 0 && e.target.id !== "add") return
     e.target.id === "add" ? setQuantity(quantity + 1) : setQuantity(quantity - 1)
   }
+
+  const handleClick = (e) => {
+    if (!isCompatible(item, contraindications)) {
+      dispatch({
+        type: "ADD",
+        payload: {
+          item, quantity
+        }
+      })
+    } else {
+      setModal(true)
+    }
+  }
+
 
   let history = useHistory()
 
@@ -144,14 +165,11 @@ export default function ProductDisplay({ item }) {
       </div>
       {/* TO DO: grey out the screen if it's already in cart */}
       {/* perhaps a hook useCartCheck? */}
-      <button className="atc" onClick={() => dispatch({
-        type: "ADD",
-        payload: {
-          item, quantity
-        }
-      })}>
+      <button className="atc" onClick={handleClick}>
         ADD TO BASKET
       </button>
+      {modal && <Modal />}
+
     </ProductDisplayStyles>
   )
 }
