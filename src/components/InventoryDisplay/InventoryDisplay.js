@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import products from '../../product-data/products'
 import ItemCard from '../ItemCard/ItemCard'
+import { CartContext } from '../../context/CartContext'
+import { useContraindications } from '../../product-data/hooks'
 
 const InventoryDisplayStyles = styled.div`
 padding: 16px;
@@ -16,12 +18,16 @@ min-height: 85vh;
 `
 
 export default function InventoryDisplay() {
+  const { state, dispatch } = useContext(CartContext)
+  const contraindications = useContraindications()
+
   return (
     <InventoryDisplayStyles>
       <h1 style={{ color: "black" }}>Products</h1>
       <div className="product-container">
         {products.map((product) => (
-          <ItemCard key={product.name} item={product} />
+          // To do, make filter for searching contraindication
+          <ItemCard key={product.name} item={product} contraindication={contraindications.find(c => product.name)} />
         ))}
       </div>
     </InventoryDisplayStyles>

@@ -5,47 +5,68 @@ export const CartContext = createContext()
 
 const initialState = {
   cart: [{
-    "name": "Alpha Arbutin 2% + HA",
-    "price": "8.90",
-    "image": "/assets/rdn-alpha-arbutin-2pct-ha-30ml.png",
-    "desc": "A concentrated serum with pure alpha arbutin and hyaluronic acid"
+    "name": "Lactic Acid 10% + HA",
+    "price": "6.80",
+    "image": "/assets/rdn-lactic-acid-10pct-ha-30ml.png",
+    "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
+    "category": ["Direct Acids"],
+    "desc": "A high-strength lactic acid superficial peeling formulation",
   },
   {
-    "name": "Mineral UV Filters SPF 15 with Antioxidants",
-    "price": "8.90",
-    "image": "/assets/rdn-mineral-uv-filters-spf-15-with-antioxidants-50ml.png"
+    "name": "Magnesium Ascorbyl Phosphate 10%",
+    "price": "9.60",
+    "image": "/assets/rdn-magnesium-ascorbyl-phosphate-10pct-30ml.png",
+    "contraindications": ["Niacinamide"],
+    "category": [],
+    "desc": "A brightening hydrator with stabilized vitamin C derivative",
   },
   {
-    "name": "Ascorbic Acid 8% + Alpha Arbutin 2%",
-    "price": "10.00",
-    "image": "/assets/rdn-100pct-AscorbicAcid8+AlphaArbutin2-Product-30ml.png",
-    "desc": "Broad Spectrum SPF 15 UVA/UVB Protection"
-  }, {
-    "name": "Retinol 0.5% in Squalane",
-    "price": "5.80",
-    "image": "/assets/rdn-retinol-0-5pct-in-squalane-30ml.png",
-    "desc": "Highly-Stable, Water-Free Solution of 0.5% Pure Retinol"
-  }, {
-    "name": "The Balance Set",
-    "price": "29.00",
-    "image": "/assets/rdn-balance-set.png"
-  }, {
-    "name": "100% Cold-Pressed Virgin Marula Oil",
-    "price": "9.90",
-    "image": "/assets/rdn-100pct-cold-pressed-virgin-marula-oil-30ml.png",
-    "desc": "Daily support formula for hair and skin"
-  },
-  {
-    "name": "100% Plant-Derived Squalane",
+    "name": "Azelaic Acid Suspension 10%",
     "price": "7.90",
-    "image": "/assets/rdn-100pct-plant-derived-squalane-30ml.png",
-    "desc": "A lightweight plant-derived solution to support healthy hydration"
+    "image": "/assets/rdn-azelaic-acid-suspension-10pct-30ml.png",
+    "contraindications": [],
+    "category": [],
+    "desc": "Multifunctional brightening formula",
   },
   {
-    "name": "100% Plant-Derived Hemi-Squalane",
-    "price": "3.95",
-    "image": "/assets/rdn-100pct-plant-derived-hemi-squalane-30ml.png",
-    "desc": "A Fast-Absorbing, Non-Greasy Hydration Solution for Skin and Hair"
+    "name": "The No-Brainer Set",
+    "price": "29.00",
+    "image": "/assets/rdn-no-brainer-set.png",
+    "contraindications": [],
+    "category": ["set"],
+    "desc": "A no-brainer",
+  },
+  {
+    "name": "Granactive Retinoid 2% in Squalane",
+    "price": "9.60",
+    "image": "/assets/rdn-granactive-retinoid-5pct-in-squalane-30ml.png",
+    "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
+    "category": ["Retinoids"],
+    "desc": "Highly-Stable, Water-Free Solution of 0.5% Ester of All-Trans Retinoic Acid",
+  },
+  {
+    "name": "Salicylic Acid 2% Solution",
+    "price": "5.30",
+    "image": "/assets/rdn-salicylic-acid-2pct-solution-30ml.png",
+    "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
+    "category": [],
+    "desc": "With 2% salicylic acid and witch hazel",
+  },
+  {
+    "name": "AHA 30% + BHA 2% Peeling Solution",
+    "price": "7.20",
+    "image": "/assets/rdn-aha-30pct-bha-2pct-peeling-solution-30ml.png",
+    "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
+    "category": ["Direct Acid"],
+    "desc": "With 30% alpha hydroxy acids (glycolic/lactic/tartaric/citric), 2% beta hydroxy acid (salicylic acid), hyaluronic acid crosspolymer, vitamin b5, black carrot and tasmanian pepperberry",
+  },
+  {
+    "name": "Granactive Retinoid 2% Emulsion (Previously Advanced Retinoid 2%)",
+    "price": "9.80",
+    "image": "/assets/rdn-granactive-retinoid-2pct-in-squalane-30ml.png",
+    "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
+    "category": ["Retinoids"],
+    "desc": "Previously Advanced Retinoid 2%",
   },],
 }
 

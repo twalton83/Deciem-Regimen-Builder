@@ -6,7 +6,6 @@ import theme from './context/ThemeContext'
 import "./App.css"
 import Router from './components/Router/Router';
 import { CartProvider } from './context/CartContext'
-import { reducer } from './context/CartReducer'
 
 function App() {
   return (

@@ -10,7 +10,9 @@ export default [
   {
     "name": "Mineral UV Filters SPF 15 with Antioxidants",
     "price": "8.90",
-    "image": "/assets/rdn-mineral-uv-filters-spf-15-with-antioxidants-50ml.png"
+    "image": "/assets/rdn-mineral-uv-filters-spf-15-with-antioxidants-50ml.png",
+    "contraindications": [],
+    "category": [],
   },
   {
     "name": "Ascorbic Acid 8% + Alpha Arbutin 2%",
@@ -31,6 +33,7 @@ export default [
     "price": "29.00",
     "image": "/assets/rdn-balance-set.png",
     "category": ["set"],
+    "contraindications": [],
     "desc": "A set for balance"
   }, {
     "name": "100% Cold-Pressed Virgin Marula Oil",
@@ -93,7 +96,7 @@ export default [
     "price": ".90",
     "image": "/assets/rdn-dropper.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Accessories"],
     "desc": "For Serum Foundations An optional dropper to help dispense serum foundations. Suitable for 30ml Serum Foundation bottles."
   },
   {
@@ -117,7 +120,7 @@ export default [
     "price": "7.70",
     "image": "/assets/rdn-100pct-organic-virgin-chia-seed-oil-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Oils and Moisturizers"],
     "desc": "Daily Support Formula for All Skin Types",
   },
   {
@@ -141,7 +144,7 @@ export default [
     "price": "9.80",
     "image": "/assets/rdn-100pct-organic-cold-pressed-rose-hip-seed-oil-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Oils and Moisturizers"],
     "desc": "Daily support formula for all skin types",
   },
   {
@@ -157,7 +160,7 @@ export default [
     "price": "19.00",
     "image": "/assets/rdn-daily-set.png",
     "contraindications": [],
-    "category": ["set"],
+    "category": ["Set"],
     "desc": "An everyday set",
   },
   {
@@ -189,7 +192,7 @@ export default [
     "price": "6.80",
     "image": "/assets/rdn-vitamin-c-suspension-30pct-in-silicone-30ml.png",
     "contraindications": ["Niacinamide", "Direct Acids", "Retinoids", "EUK 134 0.1%"],
-    "category": [],
+    "category": ["Vitamin C"],
     "desc": "A Water-Free, Stable Suspension of 30% Pure L-Ascorbic Acid in Light Silicones",
   },
   {
@@ -229,7 +232,7 @@ export default [
     "price": "4.20",
     "image": "/assets/rdn-100pct-cold-pressed-borage-seed-oil-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Oils and Moisturizers"],
     "desc": "Daily Support Formula for All Skin Types . Daily Support Formula for All Skin Types.",
   },
   {
@@ -237,7 +240,7 @@ export default [
     "price": "6.80",
     "image": "/assets/rdn-lactic-acid-10pct-ha-30ml.png",
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
-    "category": [],
+    "category": ["Direct Acids"],
     "desc": "A high-strength lactic acid superficial peeling formulation",
   },
   {

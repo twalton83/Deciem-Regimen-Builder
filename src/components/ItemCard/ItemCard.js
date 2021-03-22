@@ -28,8 +28,9 @@ flex-direction: column;
 
 `
 
-export default function ItemCard({ item }) {
+export default function ItemCard({ item, contraindication }) {
 
+  if (contraindication) console.log('true')
   return (
     <ItemCardStyles>
 
