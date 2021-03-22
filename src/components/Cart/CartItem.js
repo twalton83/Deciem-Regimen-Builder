@@ -8,6 +8,11 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 
+@media(min-width: 768px){
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
 img {
   max-width: 100px;
 }
