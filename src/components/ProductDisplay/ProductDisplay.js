@@ -14,6 +14,13 @@ flex-direction: column;
 justify-content: space-between;
 
 
+@media(max-width: 768px){
+  .desktop {
+    display:none;
+  }
+}
+
+
 @media(min-width: 768px){
   display: grid;
   grid-template-columns: 1fr auto auto 1fr;
@@ -21,14 +28,11 @@ justify-content: space-between;
   .mobile {
       display: none;
   }
-
 }
 
 height: 90vh;
 
   .info-container {
-
-    margin-top: 10%;
 
     @media(min-width: 768px){
       display: grid;
@@ -53,13 +57,18 @@ height: 90vh;
   p {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
+    margin-top: 5px;
+    text-align: left;
   }
 
 .right-col {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+
+
+  @media(min-width: 768px){
+    justify-content: center;
+  }
 
   h1 {
     width: 100%;
@@ -211,9 +220,11 @@ export default function ProductDisplay({ item }) {
           <img src={item.image} alt="" />
         </div>
         <div className="right-col">
-          <h1>
+          <h1 className="desktop">
             {item.name}
           </h1>
+          <p>Category: {item.category.toString()}</p>
+          <p>Contraindications: {item.contraindications.toString()}</p>
           <p className="desc">{item.desc}</p>
           <div className="price-container">
             <p className="price">{item.price} USD</p>
@@ -232,8 +243,6 @@ export default function ProductDisplay({ item }) {
           </div>
         </div>
       </div>
-      {/* TO DO: grey out the screen if it's already in cart */}
-      {/* perhaps a hook useCartCheck? */}
       <button className="atc mobile" onClick={handleClick}>
         ADD TO BASKET
       </button>
@@ -244,7 +253,6 @@ export default function ProductDisplay({ item }) {
         }
       })}
         toggleModal={() => setModal(!modal)} />}
-
     </ProductDisplayStyles>
   )
 }

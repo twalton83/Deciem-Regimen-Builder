@@ -7,13 +7,15 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 
-
-
 position: absolute;
 bottom: 0;
 
 height: 10vh;
-width: 100%;
+width: 100vw;
+
+@media(max-width: 768px){
+  display: none;
+}
 
 background-color: black;
 color: white;
