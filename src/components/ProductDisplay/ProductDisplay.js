@@ -13,15 +13,37 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 
+@media(min-width: 768px){
+  display: grid;
+  grid-template-columns: 100px auto auto;
+
+  &.mobile {
+    @media(min-width: 768px){
+      display: none;
+    }
+  }
+
+}
+
 height: 90vh;
 
   .info-container {
+    @media(min-width: 768px){
+      display: grid;
+      grid-template-columns: 50% 50%;
+
+    } 
+
 
     padding: 16px;
     max-width: 100vw;
 
     img {
       width: calc(100vw - 16px);
+
+    @media(min-width: 768px){
+      max-width: 400px;
+    }
     }
   }
 
@@ -30,7 +52,20 @@ height: 90vh;
     font-weight: 500;
   }
 
+.right-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    width: 100%;
+  }
+}
+
 .price-container {
+  width: 100%;
+
   margin-top: 24px;
 
   display: flex;
@@ -40,6 +75,22 @@ height: 90vh;
 
   .price {
     font-size: 18px;
+
+    @media(min-width: 768px){
+      font-size: 24px;
+      margin-right: 24px;
+    }
+  }
+
+  button {
+    &:hover {
+      background-color: black;
+      color: white;
+  }
+
+
+  transition: background-color 1s;
+
   }
 }
 
@@ -59,8 +110,29 @@ height: 90vh;
   font-weight: 600;
 
   border: none;
-}
 
+  &.mobile {
+    display: block;
+    @media(min-width: 768px){
+      display: none;
+    }
+  }
+  &.desktop {
+    display: none;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+
+    height: 48px;
+    width: auto;
+
+    margin-left: 16px;
+
+    @media(min-width: 768px){
+      display: block;
+    }
+  }
+}
 `
 
 const Incrementer = styled.div`
@@ -68,17 +140,15 @@ display: flex;
 flex-direction: row;
 justify-content: space-evenly;
 
-
-
 max-width: 150px;
 
 border: 1px solid black;
 height: 46px;
 width: 90px;
 
-
-
   button {
+    width: 100%;
+    
     font-weight: 600;
     font-size: 24px;
 
@@ -131,28 +201,37 @@ export default function ProductDisplay({ item }) {
     <ProductDisplayStyles>
       <BackButton />
       <div className="info-container">
-        <h1>
-          {item.name}
-        </h1>
-        <img src={item.image} alt="" />
-
-        <p className="desc">{item.desc}</p>
-        <div className="price-container">
-          <p className="price">{item.price} USD</p>
-          <Incrementer>
-            <button id="subtract" onClick={handleChange}>
-              -
-          </button>
-            <input onChange={setQuantity} type="text" name="qty" id="qty" value={quantity} />
-            <button id="add" onClick={handleChange}>
-              +
-          </button>
-          </Incrementer>
+        <div>
+          <h1 className="mobile">
+            {item.name}
+          </h1>
+          <img src={item.image} alt="" />
+        </div>
+        <div className="right-col">
+          <h1>
+            {item.name}
+          </h1>
+          <p className="desc">{item.desc}</p>
+          <div className="price-container">
+            <p className="price">{item.price} USD</p>
+            <Incrementer>
+              <button id="subtract" onClick={handleChange}>
+                -
+              </button>
+              <input onChange={setQuantity} type="text" name="qty" id="qty" value={quantity} />
+              <button id="add" onClick={handleChange}>
+                +
+              </button>
+            </Incrementer>
+            <button className="atc desktop" onClick={handleClick}>
+              ADD TO BASKET
+            </button>
+          </div>
         </div>
       </div>
       {/* TO DO: grey out the screen if it's already in cart */}
       {/* perhaps a hook useCartCheck? */}
-      <button className="atc" onClick={handleClick}>
+      <button className="atc mobile" onClick={handleClick}>
         ADD TO BASKET
       </button>
       {modal && <Modal submit={() => dispatch({
