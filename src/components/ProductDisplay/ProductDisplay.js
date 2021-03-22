@@ -113,7 +113,7 @@ export default function ProductDisplay({ item }) {
   const contraindications = useContraindications()
 
   const [quantity, setQuantity] = useState(1);
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const { state, dispatch } = useContext(CartContext)
 

@@ -86,7 +86,14 @@ color: #FFFFFF;
       background-color: ${props => props.theme.bgColor};
       color: ${props => props.theme.primaryText};
 
+      svg {
+        fill: black;
+      }
 
+      .item-count {
+        background-color: black;
+        color: white;
+      }
     }
 
 
