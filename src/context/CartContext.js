@@ -85,7 +85,7 @@ export function CartProvider({ children }) {
 
   useEffect(() => {
     const total = state.cart.reduce((acc, curr) => {
-      return acc += parseInt(curr.price)
+      return acc += parseInt(curr.price * 100)
     }, 0)
 
     dispatch({

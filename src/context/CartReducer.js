@@ -19,9 +19,8 @@ function update(state, payload) {
 }
 
 function updateTotal(state, payload) {
-  console.log('updating')
   return {
-    ...state, total: payload
+    ...state, total: (payload * .01).toFixed(2)
   }
 }
 
