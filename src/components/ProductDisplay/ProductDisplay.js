@@ -208,7 +208,6 @@ export default function ProductDisplay({ item }) {
     }
   }
 
-
   return (
     <ProductDisplayStyles>
       <BackButton />
@@ -223,8 +222,8 @@ export default function ProductDisplay({ item }) {
           <h1 className="desktop">
             {item.name}
           </h1>
-          <p>Category: {item.category.toString()}</p>
-          <p>Contraindications: {item.contraindications.toString()}</p>
+          <p>Category: {item.category}</p>
+          <p>Contraindications: {item.contraindications.length > 0 ? item.contraindications.join(", ") : "None"}</p>
           <p className="desc">{item.desc}</p>
           <div className="price-container">
             <p className="price">{item.price} USD</p>
