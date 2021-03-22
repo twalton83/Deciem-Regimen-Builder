@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
 
@@ -21,16 +21,54 @@ button {
   border: none;
   font-weight: 600;
 }
+
+label {
+  display: flex;
+
+  width: 100px;
+
+  font-weight: 600;
+
+  input {
+    width: 30px;
+
+    border: none;
+    border-bottom: 1px solid black;
+
+    font-weight: 600;
+    text-align: center;
+  }
+}
 `
 
 export default function CartItem({ item }) {
-  const { state, dispatch } = useContext(CartContext)
+  const { dispatch } = useContext(CartContext)
+  const [quantity, setQuantity] = useState(item.quantity);
+
+  const handleChange = (e) => {
+    setQuantity(parseInt(e.target.value))
+
+    dispatch({
+      type: "UPDATE",
+      payload: {
+        item,
+        qty: parseInt(e.target.value)
+      }
+    })
+  }
+
 
   return (
     <CartItemStyles>
       <img src={item.image} alt="" />
       <p>
         {item.name}
+      </p>
+      <p>
+        <label htmlFor="qty">
+          Qty:
+            <input onChange={handleChange} type="number" value={item.quantity} name="qty" id="quantity" />
+        </label>
       </p>
       <p>
         <strong>

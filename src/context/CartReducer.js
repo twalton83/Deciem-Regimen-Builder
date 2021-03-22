@@ -1,13 +1,21 @@
 function add(state, payload) {
   const { item, quantity } = payload
+
   return {
     ...state,
-    cart: [...state.cart, item]
+    cart: [...state.cart, { item, quantity }]
   }
 }
 
 function update(state, payload) {
-  return state
+  const { item, qty } = payload;
+  const updatedCart = state.cart.map(cartItem => {
+    if (cartItem.name === item.name) {
+      cartItem.quantity = qty
+    }
+    return cartItem
+  })
+  return { ...state, cart: updatedCart }
 }
 
 function remove(state, payload) {

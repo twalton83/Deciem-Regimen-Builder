@@ -79,6 +79,7 @@ color: #FFFFFF;
     height: 26px;
 
     font-size: 20px;
+    font-weight: 600;
     text-align: center;
   }
 
@@ -101,8 +102,8 @@ color: #FFFFFF;
 `
 
 export default function Header() {
-  const { state, dispatch } = useContext(CartContext)
-
+  const { state } = useContext(CartContext)
+  const cartAmount = state.cart.reduce((acc, curr) => curr.quantity + acc, 0)
   return (
     <HeaderStyles>
       <NavLink to="/">
@@ -114,7 +115,7 @@ export default function Header() {
         </NavLink>
         <NavLink className="cart" activeClassName="current" to="/cart">
           {state.cart.length > 0 && <span className="item-count">
-            {state.cart.length}
+            {cartAmount}
           </span>}
           <Cart />
         </NavLink>

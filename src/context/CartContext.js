@@ -11,6 +11,7 @@ const initialState = {
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
     "category": ["Direct Acids"],
     "desc": "A high-strength lactic acid superficial peeling formulation",
+    quantity: 1
   },
   {
     "name": "Magnesium Ascorbyl Phosphate 10%",
@@ -19,6 +20,7 @@ const initialState = {
     "contraindications": ["Niacinamide"],
     "category": [],
     "desc": "A brightening hydrator with stabilized vitamin C derivative",
+    quantity: 1
   },
   {
     "name": "Azelaic Acid Suspension 10%",
@@ -27,6 +29,7 @@ const initialState = {
     "contraindications": [],
     "category": [],
     "desc": "Multifunctional brightening formula",
+    quantity: 1
   },
   {
     "name": "The No-Brainer Set",
@@ -35,6 +38,7 @@ const initialState = {
     "contraindications": [],
     "category": ["set"],
     "desc": "A no-brainer",
+    quantity: 1
   },
   {
     "name": "Granactive Retinoid 2% in Squalane",
@@ -43,6 +47,7 @@ const initialState = {
     "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
     "category": ["Retinoids"],
     "desc": "Highly-Stable, Water-Free Solution of 0.5% Ester of All-Trans Retinoic Acid",
+    quantity: 1
   },
   {
     "name": "Salicylic Acid 2% Solution",
@@ -51,6 +56,7 @@ const initialState = {
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
     "category": [],
     "desc": "With 2% salicylic acid and witch hazel",
+    quantity: 1
   },
   {
     "name": "AHA 30% + BHA 2% Peeling Solution",
@@ -59,6 +65,7 @@ const initialState = {
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
     "category": ["Direct Acid"],
     "desc": "With 30% alpha hydroxy acids (glycolic/lactic/tartaric/citric), 2% beta hydroxy acid (salicylic acid), hyaluronic acid crosspolymer, vitamin b5, black carrot and tasmanian pepperberry",
+    quantity: 1
   },
   {
     "name": "Granactive Retinoid 2% Emulsion (Previously Advanced Retinoid 2%)",
@@ -67,6 +74,7 @@ const initialState = {
     "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
     "category": ["Retinoids"],
     "desc": "Previously Advanced Retinoid 2%",
+    quantity: 1
   },],
 }
 
