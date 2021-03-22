@@ -18,12 +18,12 @@ const DialogStyles = styled.div`
   position: relative;
   z-index: 20;
   width: auto;
-  max-width: 50vw;
+  max-width: 70vw;
   height: 50%;
   background-color: #FFF;
   color: black;
   margin: 0 auto;
-  margin-top: 10%;
+  margin-top: 30%;
 
   display: grid;
   grid-template-columns: 100%;
