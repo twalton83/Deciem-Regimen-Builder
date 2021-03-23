@@ -25,6 +25,11 @@ const DialogStyles = styled.div`
   margin: 0 auto;
   margin-top: 30%;
 
+  @media(min-width: 768px){
+    margin-top: 10%;
+    width: 30vw;
+  }
+
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 15% 70% 15%;

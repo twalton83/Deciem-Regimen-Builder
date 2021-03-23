@@ -14,9 +14,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <CartProvider>
         <div className="App">
-          <Header>
-            <p>Deciem Regiment Builder</p>
-          </Header>
+          <Header />
           <Router products={products} />
           <Footer />
         </div>

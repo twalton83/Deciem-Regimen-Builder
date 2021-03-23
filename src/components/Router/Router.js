@@ -19,7 +19,7 @@ export default function Router({ products }) {
         <InventoryDisplay products={products} />
       </Route>
       <Route exact path="/category/:category" render={routeProps => (
-        <InventoryDisplay products={filterByCategory(routeProps.match.params.category)} />
+        <InventoryDisplay category={routeProps.match.params.category} products={filterByCategory(routeProps.match.params.category)} />
       )}
       />
       <Route exact path="/cart">

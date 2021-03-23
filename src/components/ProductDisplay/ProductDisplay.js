@@ -72,6 +72,8 @@ height: 90vh;
   display: flex;
   flex-direction: column;
 
+  max-height: 75vh;
+
 
   @media(min-width: 768px){
     justify-content: center;
