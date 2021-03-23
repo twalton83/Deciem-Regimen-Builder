@@ -192,6 +192,7 @@ width: 90px;
 
 
 export default function ProductDisplay({ item }) {
+  console.log(item)
   const contraindications = useContraindications()
 
   const [qty, setQty] = useState(1);
