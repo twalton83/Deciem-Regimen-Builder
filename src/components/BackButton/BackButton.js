@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const BackButtonStyles = styled.button`
     width: 50px;
+    height: 50px;
 
     font-size: 20px;
     font-weight: 500;
@@ -13,9 +14,6 @@ const BackButtonStyles = styled.button`
     border: none;
     text-decoration: underline;
 
-  @media(min-width: 768px){
-    display: none;
-  }
 `
 
 export default function BackButton() {

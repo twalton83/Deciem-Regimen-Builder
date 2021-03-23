@@ -45,7 +45,7 @@ function updateTotal(state, payload) {
 function remove(state, payload) {
   return {
     ...state,
-    cart: state.cart.filter(item => item.name !== payload.item.name)
+    cart: state.cart.filter(item => item.item.name !== payload.item.name)
   }
 }
 

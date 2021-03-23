@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
@@ -16,6 +16,8 @@ flex-direction: column;
 justify-content: space-between;
 
 
+
+
 @media(max-width: 768px){
   .desktop {
     display:none;
@@ -25,7 +27,9 @@ justify-content: space-between;
 
 @media(min-width: 768px){
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: 100px auto auto;
+
+  max-height: 85vh;
 
   .mobile {
       display: none;
@@ -192,13 +196,22 @@ width: 90px;
 
 
 export default function ProductDisplay({ item }) {
-  console.log(item)
   const contraindications = useContraindications()
 
   const [qty, setQty] = useState(1);
   const [modal, setModal] = useState(false);
+  const [added, setAdded] = useState(false);
 
   const { dispatch } = useContext(CartContext)
+
+  useEffect(() => {
+
+    return () => {
+      setTimeout(() => {
+        setAdded(false)
+      }, 2000)
+    }
+  }, [added])
 
   const handleChange = (e) => {
     if (qty === 0 && e.target.id !== "add") return
@@ -213,6 +226,7 @@ export default function ProductDisplay({ item }) {
           item, qty
         }
       })
+      setAdded(true)
     } else {
       setModal(true)
     }
@@ -268,8 +282,8 @@ export default function ProductDisplay({ item }) {
           </div>
         </div>
       </div>
-      <button className="atc mobile" onClick={handleClick}>
-        ADD TO BASKET
+      <button className="atc mobile" onClick={!added && handleClick}>
+        {added ? "Added!" : "ADD TO BASKET"}
       </button>
       {modal && <Modal contraindications={contraindications} submit={() => dispatch({
         type: "ADD",
