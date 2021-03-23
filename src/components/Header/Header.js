@@ -112,7 +112,7 @@ export default function Header() {
   return (
     <HeaderStyles>
       <NavLink to="/">
-        <h1>Deciem Regiment Builder</h1>
+        <h1>Deciem Regimen Builder</h1>
       </NavLink>
       <nav>
         <NavLink className="shop" activeClassName="current" to="/shop">
