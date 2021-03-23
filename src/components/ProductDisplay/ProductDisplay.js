@@ -219,6 +219,7 @@ export default function ProductDisplay({ item }) {
   }
 
   const handleClick = (e) => {
+    if (qty < 1) return
     if (!compatibility(item, contraindications)) {
       dispatch({
         type: "ADD",
