@@ -226,6 +226,14 @@ export default function ProductDisplay({ item }) {
     )
   ))
 
+  const categoryLinks = item.category.map((c, index) => (
+    index === item.category.length - 1 ? (
+      <Link to={`/category/${createURL(c)}`}>{c} </Link>
+    ) : (
+      <Link to={`/category/${createURL(c)}`}>{c},</Link>
+    )
+  ))
+
   return (
     <ProductDisplayStyles>
       <BackButton />
@@ -240,7 +248,7 @@ export default function ProductDisplay({ item }) {
           <h1 className="desktop">
             {item.name}
           </h1>
-          {item.category.length > 0 && <p>Category: <Link to={`/category/${item.category}`}>{item.category}</Link></p>}
+          <p>Categories: {item.category.length > 0 ? categoryLinks : "None"}</p>
           <p>Contraindications: {item.contraindications.length > 0 ? contraindicationLinks : "None"}</p>
           <p className="desc">{item.desc}</p>
           <div className="price-container">

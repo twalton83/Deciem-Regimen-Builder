@@ -4,7 +4,7 @@ export default [
     "price": "8.90",
     "image": "/assets/rdn-alpha-arbutin-2pct-ha-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums"],
     "desc": "A concentrated serum with pure alpha arbutin and hyaluronic acid"
   },
   {
@@ -19,14 +19,14 @@ export default [
     "price": "10.00",
     "image": "/assets/rdn-100pct-AscorbicAcid8+AlphaArbutin2-Product-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Vitamin C", "Serums"],
     "desc": "Broad Spectrum SPF 15 UVA/UVB Protection"
   }, {
     "name": "Retinol 0.5% in Squalane",
     "price": "5.80",
     "image": "/assets/rdn-retinol-0-5pct-in-squalane-30ml.png",
     "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
-    "category": ["Retinoids"],
+    "category": ["Retinoids", "Serums"],
     "desc": "Highly-Stable, Water-Free Solution of 0.5% Pure Retinol"
   }, {
     "name": "The Balance Set",
@@ -48,7 +48,7 @@ export default [
     "price": "7.90",
     "image": "/assets/rdn-100pct-plant-derived-squalane-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums"],
     "desc": "A lightweight plant-derived solution to support healthy hydration"
   },
   {
@@ -56,7 +56,7 @@ export default [
     "price": "3.95",
     "image": "/assets/rdn-100pct-plant-derived-hemi-squalane-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums"],
     "desc": "A Fast-Absorbing, Non-Greasy Hydration Solution for Skin and Hair"
   },
   {
@@ -64,7 +64,7 @@ export default [
     "price": "14.90",
     "image": "/assets/rdn-100pct-Organic-Virgin-Sea-Buckthorn-Fruit-Oil.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Oils and Moisturizers"],
     "desc": "Daily Support Formula for All Skin Types"
   },
   {
@@ -72,7 +72,7 @@ export default [
     "price": "9.20",
     "image": "/assets/rdn-b-oil-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Oils and Moisturizers"],
     "desc": "Daily Support Formula for All Skin Types"
   },
   {
@@ -80,7 +80,7 @@ export default [
     "price": "5.80",
     "image": "/assets/rdn-100pct-niacinamide-powder-20g.png",
     "contraindications": ["Vitamin C", "Direct Acids"],
-    "category": [],
+    "category": ["Serums"],
     "desc": "Less than 100ppm residual Nicotinic Acid"
   },
   {
@@ -88,7 +88,7 @@ export default [
     "price": "7.90",
     "image": "/assets/rdn-argireline-solution-10pct-30ml.png",
     "contraindications": ["Vitamin C", "Direct Acids"],
-    "category": [],
+    "category": ["Serums", "Peptides"],
     "desc": "Lightweight serum with 10 % argireline peptide complex"
   },
   {
@@ -104,7 +104,7 @@ export default [
     "price": "8.80",
     "image": "/assets/rdn-euk-134-0-1pct-30ml.png",
     "contraindications": ["Direct Acids", "Vitamin C", "Resveratrol 3% + Ferulic Acid 3%",],
-    "category": [],
+    "category": ["Serums"],
     "desc": "Water-Free, High-Potency Antioxidant Formula",
   },
   {
@@ -112,7 +112,7 @@ export default [
     "price": "6.80",
     "image": "/assets/rdn-marine-hyaluronics-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums"],
     "desc": "Ultra-Lightweight Hydration Support with Marine-Derived Vegan Water Reservoirs",
   },
   {
@@ -128,7 +128,7 @@ export default [
     "price": "6.80",
     "image": "/assets/rdn-amino-acids-b5-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums"],
     "desc": "A Concentrated Hydration Support Formula",
   },
   {
@@ -136,7 +136,7 @@ export default [
     "price": "7.90",
     "image": "/assets/rdn-resveratrol-3pct-ferulic-acid-3pct-30ml.png",
     "contraindications": ["EUK 134 0.1%"],
-    "category": [],
+    "category": ["Serums"],
     "desc": "Water-Free, High-Potency Antioxidant Formula",
   },
   {
@@ -152,7 +152,7 @@ export default [
     "price": "6.50",
     "image": "/assets/rdn-lactic-acid-5pct-ha-30ml.png",
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
-    "category": ["Direct Acid"],
+    "category": ["Direct Acids"],
     "desc": "A mild lactic acid superficial peeling formulation",
   },
   {
@@ -168,7 +168,7 @@ export default [
     "price": "6.70",
     "image": "/assets/rdn-retinol-1pct-in-squalane-30ml.png",
     "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
-    "category": ["Retinoids"],
+    "category": ["Retinoids", "Serums"],
     "desc": "Highly-Stable, Water-Free Solution of 1% Pure Retinol",
   },
   {
@@ -176,7 +176,7 @@ export default [
     "price": "14.80",
     "image": "/assets/rdn-buffet-30ml.png",
     "contraindications": ["Vitamin C", "Direct Acids"],
-    "category": [],
+    "category": ["Peptides"],
     "desc": "Multi-technology peptide serum",
   },
   {
@@ -184,7 +184,7 @@ export default [
     "price": "5.30",
     "image": "/assets/rdn-retinol-0-2pct-in-squalane-30ml.png",
     "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
-    "category": ["Retinoids"],
+    "category": ["Retinoids", "Serums"],
     "desc": "Highly-Stable, Water-Free Solution of 0.2% Pure Retinol",
   },
   {
@@ -200,7 +200,7 @@ export default [
     "price": "17.80",
     "image": "/assets/rdn-ascorbyl-tetraisopalmitate-solution-20pct-in-vitamin-f-30ml.png",
     "contraindications": ["Niacinamide"],
-    "category": [],
+    "category": ["Vitamin C"],
     "desc": "High-strength oil-solubilized vitamin C derivative in vitamin F",
   },
   {
@@ -208,7 +208,7 @@ export default [
     "price": "17.80",
     "image": "/assets/rdn-ascorbyl-glucoside-solution-12pct-30ml.png",
     "contraindications": ["Niacinamide"],
-    "category": ["Niacinamide"],
+    "category": ["Niacinamide", "Vitamin C"],
     "desc": "A brightening serum with stabilized vitamin C derivative",
   },
   {
@@ -216,7 +216,7 @@ export default [
     "price": "6.70",
     "image": "/assets/rdn-caffeine-solution-5pct-egcg-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums"],
     "desc": "Reduces appearance of eye contour pigmentation and of puffiness",
   },
   {
@@ -224,7 +224,7 @@ export default [
     "price": "5.80",
     "image": "/assets/rdn-100pct-l-ascorbic-acid-powder-20g.png",
     "contraindications": ["Niacinamide", "Peptides", "Direct Acids", "Retinoids", "EUK 134 0.1%"],
-    "category": [],
+    "category": ["Vitamin C"],
     "desc": "Fine 325 Mesh Topical Powder",
   },
   {
@@ -248,7 +248,7 @@ export default [
     "price": "9.60",
     "image": "/assets/rdn-magnesium-ascorbyl-phosphate-10pct-30ml.png",
     "contraindications": ["Niacinamide"],
-    "category": [],
+    "category": ["Serums", "Vitamin C"],
     "desc": "A brightening hydrator with stabilized vitamin C derivative",
   },
   {
@@ -256,7 +256,7 @@ export default [
     "price": "7.90",
     "image": "/assets/rdn-azelaic-acid-suspension-10pct-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Serums", "Direct Acids"],
     "desc": "Multifunctional brightening formula",
   },
   {
@@ -272,7 +272,7 @@ export default [
     "price": "9.60",
     "image": "/assets/rdn-granactive-retinoid-5pct-in-squalane-30ml.png",
     "contraindications": ["Retinoids", "Direct Acids", "Vitamin C"],
-    "category": ["Retinoids"],
+    "category": ["Retinoids", "Serums"],
     "desc": "Highly-Stable, Water-Free Solution of 0.5% Ester of All-Trans Retinoic Acid",
   },
   {
@@ -280,7 +280,7 @@ export default [
     "price": "5.30",
     "image": "/assets/rdn-salicylic-acid-2pct-solution-30ml.png",
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
-    "category": [],
+    "category": ["Direct Acids"],
     "desc": "With 2% salicylic acid and witch hazel",
   },
   {
@@ -288,7 +288,7 @@ export default [
     "price": "7.20",
     "image": "/assets/rdn-aha-30pct-bha-2pct-peeling-solution-30ml.png",
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
-    "category": ["Direct Acid"],
+    "category": ["Direct Acids"],
     "desc": "With 30% alpha hydroxy acids (glycolic/lactic/tartaric/citric), 2% beta hydroxy acid (salicylic acid), hyaluronic acid crosspolymer, vitamin b5, black carrot and tasmanian pepperberry",
   },
   {
@@ -304,7 +304,7 @@ export default [
     "price": "12.00",
     "image": "/assets/rdn-salicylic-acid-2pct-masque-50ml.png",
     "contraindications": ["Direct Acids", "Peptides", "Retinoids", "Vitamin C", "100% Niacinamide Powder", "EUK 134 0.1%"],
-    "category": [],
+    "category": ["Direct Acids"],
     "desc": "With 2% Salicylic Acid, Vegetable Charcoal, Amazonian Clays and Squalane",
   },
 
@@ -313,7 +313,7 @@ export default [
     "price": "7.90",
     "image": "/assets/rdn-squalane-cleanser-50ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Cleansers"],
     "desc": "A Gentle, Moisturizing Facial Cleanser",
   },
 
@@ -322,15 +322,15 @@ export default [
     "price": "11.50",
     "image": "/assets/rdn-matrixyl-10pct-ha-30ml.png",
     "contraindications": ["Vitamin C", "Direct Acids"],
-    "category": [],
+    "category": ["Peptides"],
     "desc": "A high-strength peptide formulation",
   },
   {
     "name": "Natural Moisturizing Factors + HA",
     "price": "5.80",
     "image": "/assets/rdn-natural-moisturizing-factors-ha-30ml.png",
-    "contraindications": [],
-    "category": [],
+    "contraindications": ["Moisturizers"],
+    "category": ["Oils and Moisturizers"],
     "desc": "Surface hydration formula",
   },
   {
@@ -338,7 +338,7 @@ export default [
     "price": "6.80",
     "image": "/assets/rdn-100pct-organic-cold-pressed-moroccan-argan-oil-30ml.png",
     "contraindications": [],
-    "category": [],
+    "category": ["Oils and Moisturizers"],
     "desc": "Daily support formula for hair and skin",
   },
 ]
