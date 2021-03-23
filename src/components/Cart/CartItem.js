@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
 
@@ -46,10 +46,13 @@ label {
 }
 `
 
-export default function CartItem({ item }) {
+export default function CartItem({ item, quantity }) {
   const { dispatch } = useContext(CartContext)
 
+  const [updatedQty, setUpdatedQty] = useState(quantity);
+
   const handleChange = (e) => {
+    setUpdatedQty(e.target.value)
     dispatch({
       type: "UPDATE",
       payload: {
@@ -68,7 +71,7 @@ export default function CartItem({ item }) {
       <p>
         <label htmlFor="qty">
           Qty:
-            <input onChange={handleChange} type="number" value={item.quantity} name="qty" id="quantity" />
+            <input onChange={handleChange} type="number" value={updatedQty} name="qty" id="quantity" />
         </label>
       </p>
       <p>

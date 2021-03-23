@@ -9,8 +9,9 @@ function add(state, payload) {
 
 function update(state, payload) {
   const { item, qty } = payload;
+
   const updatedCart = state.cart.map(cartItem => {
-    if (cartItem.name === item.name) {
+    if (cartItem.item.name === item.name) {
       cartItem.quantity = qty
     }
     return cartItem

@@ -225,7 +225,6 @@ export default function ProductDisplay({ item }) {
     )
   ))
 
-  console.log(contraindicationLinks)
   return (
     <ProductDisplayStyles>
       <BackButton />
