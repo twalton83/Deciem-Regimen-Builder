@@ -61,7 +61,7 @@ a {
 
 export default function Cart() {
   const { state } = useContext(CartContext)
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
 
   const handleModal = () => {
     setModal(!modal)
