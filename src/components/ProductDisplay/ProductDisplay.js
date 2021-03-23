@@ -6,6 +6,8 @@ import { useContraindications } from '../../product-data/hooks'
 import { isCompatible } from '../../product-data/helpers'
 import Modal from '../Modal/Modal';
 import BackButton from '../BackButton/BackButton'
+import { Link } from 'react-router-dom'
+import { createURL } from '../../product-data/helpers'
 
 
 const ProductDisplayStyles = styled.div`
@@ -59,6 +61,11 @@ height: 90vh;
     font-weight: 500;
     margin-top: 5px;
     text-align: left;
+  }
+
+  a {
+    color: inherit;
+    margin-right: 5px;
   }
 
 .right-col {
@@ -208,6 +215,15 @@ export default function ProductDisplay({ item }) {
     }
   }
 
+  const contraindicationLinks = item.contraindications.map((c, index) => (
+    index === item.contraindications.length - 1 ? (
+      <Link to={`/category/${createURL(c)}`}>{c} </Link>
+    ) : (
+      <Link to={`/category/${createURL(c)}`}>{c},</Link>
+    )
+  ))
+
+  console.log(contraindicationLinks)
   return (
     <ProductDisplayStyles>
       <BackButton />
@@ -222,8 +238,8 @@ export default function ProductDisplay({ item }) {
           <h1 className="desktop">
             {item.name}
           </h1>
-          <p>Category: {item.category}</p>
-          <p>Contraindications: {item.contraindications.length > 0 ? item.contraindications.join(", ") : "None"}</p>
+          {item.category.length > 0 && <p>Category: <Link to={`/category/${item.category}`}>{item.category}</Link></p>}
+          <p>Contraindications: {item.contraindications.length > 0 ? contraindicationLinks : "None"}</p>
           <p className="desc">{item.desc}</p>
           <div className="price-container">
             <p className="price">{item.price} USD</p>

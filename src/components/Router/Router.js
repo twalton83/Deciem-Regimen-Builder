@@ -4,7 +4,7 @@ import InventoryDisplay from '../InventoryDisplay/InventoryDisplay'
 import Landing from '../Landing/Landing'
 import Cart from '../Cart/Cart'
 import ProductDisplay from '../ProductDisplay/ProductDisplay'
-import { findProduct } from '../../product-data/helpers'
+import { findProduct, filterByCategory } from '../../product-data/helpers'
 
 
 export default function Router({ products }) {
@@ -18,12 +18,15 @@ export default function Router({ products }) {
       <Route exact path="/shop">
         <InventoryDisplay products={products} />
       </Route>
+      <Route exact path="/category/:category" render={routeProps => (
+        <InventoryDisplay products={filterByCategory(routeProps.match.params.category)} />
+      )}
+      />
       <Route exact path="/cart">
         <Cart />
       </Route>
       <Route exact path="/">
         <Landing />
       </Route>
-    </Switch>
-  )
+    </Switch>)
 }

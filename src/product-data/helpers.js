@@ -17,10 +17,14 @@ function isCompatible(item, contraindications) {
   return contraindications.includes(item.name) || contraindications.some(c => item.category.includes(c))
 }
 
+function filterByCategory(category) {
+  return products.filter(product => product.category.includes(category))
+}
 
 
 export {
   findProduct,
   createURL,
-  isCompatible
+  isCompatible,
+  filterByCategory
 }

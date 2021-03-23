@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import products from '../../product-data/products'
 import ItemCard from '../ItemCard/ItemCard'
 import { useContraindications } from '../../product-data/hooks'
 import { isCompatible } from '../../product-data/helpers'
@@ -26,7 +25,7 @@ max-height: 85vh;
 overflow-y: scroll;
 `
 
-export default function InventoryDisplay() {
+export default function InventoryDisplay({ products }) {
   const contraindications = useContraindications()
 
   return (
