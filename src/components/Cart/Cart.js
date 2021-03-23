@@ -1,9 +1,10 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
 import CartItem from './CartItem'
 import BackButton from '../BackButton/BackButton'
 import { Link } from 'react-router-dom'
+import CheckoutModal from '../CheckoutModal/CheckoutModal'
 
 const CartStyles = styled.div`
 display: flex;
@@ -55,12 +56,16 @@ max-width: 150px;
 a {
   text-decoration: none;
   color: ${props => props.theme.primaryText};
-
 }
 `
 
 export default function Cart() {
   const { state } = useContext(CartContext)
+  const [modal, setModal] = useState(true);
+
+  const handleModal = () => {
+    setModal(!modal)
+  }
 
   return (
     <CartStyles>
@@ -73,9 +78,9 @@ export default function Cart() {
           <p className="total">
             TOTAL: {state.total} USD
       </p>
-          <button className="checkout">
+          <button className="checkout" onClick={handleModal}>
             CHECK OUT
-      </button>
+          </button>
         </>
       }
       {state.cart.length === 0 &&
@@ -90,6 +95,8 @@ export default function Cart() {
           </ShopButton>
         </div>
       }
+      {modal && <CheckoutModal toggleModal={handleModal} />}
+
     </CartStyles >
   )
 }
