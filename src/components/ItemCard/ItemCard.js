@@ -2,10 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { createURL } from '../../product-data/helpers';
+import { ReactComponent as Warning } from './exclamation.svg'
+
 
 const ItemCardStyles = styled.div`
 display: flex;
 flex-direction: column;
+
+position: relative;
 
 opacity: ${props => props.display ? ".65" : "1"};
 
@@ -29,11 +33,24 @@ opacity: ${props => props.display ? ".65" : "1"};
     font-weight: 600;
   }
 
+  svg {
+    position: absolute;
+
+    height: 35px;
+    width: 35px;
+
+    right: 20px;
+    top: 20px;
+
+    fill: red;
+  }
+
 `
 
 export default function ItemCard({ item, contraindication }) {
   return (
     <ItemCardStyles display={+contraindication}>
+      {contraindication && <Warning />}
       <div>
         <Link to={"/item/" + createURL(item.name)}>
           <img src={item.image} alt="" />

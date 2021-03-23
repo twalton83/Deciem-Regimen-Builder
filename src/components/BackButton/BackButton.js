@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const BackButtonStyles = styled.button`
-    width: 50px;
+    width: 100px;
     height: 50px;
 
     font-size: 20px;
@@ -21,7 +21,7 @@ export default function BackButton() {
 
   return (
     <BackButtonStyles onClick={() => history.goBack()}>
-      {'<<<'}
+      {'< Back'}
     </BackButtonStyles>
   )
 }
