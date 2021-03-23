@@ -18,7 +18,7 @@ export default [
     "name": "Ascorbic Acid 8% + Alpha Arbutin 2%",
     "price": "10.00",
     "image": "/assets/rdn-100pct-AscorbicAcid8+AlphaArbutin2-Product-30ml.png",
-    "contraindications": [],
+    "contraindications": ["Retinoids", "Niacinamide", "Peptides", "Direct Acids", "EUK 134 0.1%"],
     "category": ["Vitamin C", "Serums"],
     "desc": "Broad Spectrum SPF 15 UVA/UVB Protection"
   }, {
