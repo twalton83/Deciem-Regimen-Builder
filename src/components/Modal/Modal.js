@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+import { createURL } from '../../product-data/helpers'
 
 const ModalStyles = styled.div`
   z-index: 10;
@@ -62,17 +64,30 @@ const DialogStyles = styled.div`
   }
 `
 
-export default function Modal({ submit, toggleModal }) {
+export default function Modal({ submit, toggleModal, contraindications }) {
 
   const handleSubmit = () => {
     submit()
     toggleModal()
   }
+
+  const contraindicationList = contraindications.map((c, index) => (
+    index === contraindications.length - 1 ? (
+      <Link to={`/category/${createURL(c)}`}>{c} </Link>
+    ) : (
+      <Link to={`/category/${createURL(c)}`}>{c},</Link>
+    )
+  ))
   return (
     <ModalStyles>
       <DialogStyles>
         <h1>WARNING</h1>
-        <p>This product is not compatible with one or more items in your cart, would you still like to add it to your cart?</p>
+        <div>
+          <p>This product is not compatible with one or more items in your cart, would you still like to add it to your cart?</p>
+          <p>
+            Contraindications: {contraindicationList}
+          </p>
+        </div>
         <div className="button-container">
           <button className="yes" onClick={handleSubmit}>
             Yes

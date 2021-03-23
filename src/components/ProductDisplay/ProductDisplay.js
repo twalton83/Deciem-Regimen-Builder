@@ -3,7 +3,7 @@ import React, { useState, useContext } from 'react'
 import styled from 'styled-components'
 import { CartContext } from '../../context/CartContext'
 import { useContraindications } from '../../product-data/hooks'
-import { isCompatible } from '../../product-data/helpers'
+import { compatibility } from '../../product-data/helpers'
 import Modal from '../Modal/Modal';
 import BackButton from '../BackButton/BackButton'
 import { Link } from 'react-router-dom'
@@ -25,7 +25,7 @@ justify-content: space-between;
 
 @media(min-width: 768px){
   display: grid;
-  grid-template-columns: 1fr auto auto 1fr;
+  grid-template-columns: 1fr auto auto;
 
   .mobile {
       display: none;
@@ -206,7 +206,7 @@ export default function ProductDisplay({ item }) {
   }
 
   const handleClick = (e) => {
-    if (!isCompatible(item, contraindications)) {
+    if (!compatibility(item, contraindications)) {
       dispatch({
         type: "ADD",
         payload: {
@@ -271,7 +271,7 @@ export default function ProductDisplay({ item }) {
       <button className="atc mobile" onClick={handleClick}>
         ADD TO BASKET
       </button>
-      {modal && <Modal submit={() => dispatch({
+      {modal && <Modal contraindications={contraindications} submit={() => dispatch({
         type: "ADD",
         payload: {
           item, qty

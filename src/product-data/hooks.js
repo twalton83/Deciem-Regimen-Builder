@@ -9,7 +9,7 @@ function useContraindications() {
   useEffect(() => {
     function gatherContraindications(items) {
       // TO DO, avoid duplicates, use .reduce()
-      return items.map(item => item.contraindications).flat()
+      return items.map(item => item.item.contraindications).flat()
     }
     setContraindications(gatherContraindications(state.cart))
   }, [state.cart])

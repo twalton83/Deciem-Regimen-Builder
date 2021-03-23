@@ -19,7 +19,8 @@ function createURL(name) {
     .replaceAll('+', 'plus')
 }
 
-function isCompatible(item, contraindications) {
+function compatibility(item, contraindications) {
+  console.log(contraindications, "contraindications")
   return contraindications.includes(item.name) || contraindications.some(c => item.category.includes(c))
 }
 
@@ -31,6 +32,6 @@ function filterByCategory(category) {
 export {
   findProduct,
   createURL,
-  isCompatible,
+  compatibility,
   filterByCategory
 }
