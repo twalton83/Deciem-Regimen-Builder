@@ -194,14 +194,14 @@ width: 90px;
 export default function ProductDisplay({ item }) {
   const contraindications = useContraindications()
 
-  const [quantity, setQuantity] = useState(1);
+  const [qty, setQty] = useState(1);
   const [modal, setModal] = useState(false);
 
   const { dispatch } = useContext(CartContext)
 
   const handleChange = (e) => {
-    if (quantity === 0 && e.target.id !== "add") return
-    e.target.id === "add" ? setQuantity(quantity + 1) : setQuantity(quantity - 1)
+    if (qty === 0 && e.target.id !== "add") return
+    e.target.id === "add" ? setQty(qty + 1) : setQty(qty - 1)
   }
 
   const handleClick = (e) => {
@@ -209,7 +209,7 @@ export default function ProductDisplay({ item }) {
       dispatch({
         type: "ADD",
         payload: {
-          item, quantity
+          item, qty
         }
       })
     } else {
@@ -248,7 +248,7 @@ export default function ProductDisplay({ item }) {
               <button id="subtract" onClick={handleChange}>
                 -
               </button>
-              <input onChange={setQuantity} type="text" name="qty" id="qty" value={quantity} />
+              <input onChange={setQty} type="text" name="qty" id="qty" value={qty} />
               <button id="add" onClick={handleChange}>
                 +
               </button>
@@ -265,7 +265,7 @@ export default function ProductDisplay({ item }) {
       {modal && <Modal submit={() => dispatch({
         type: "ADD",
         payload: {
-          item, quantity
+          item, qty
         }
       })}
         toggleModal={() => setModal(!modal)} />}

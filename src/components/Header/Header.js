@@ -108,7 +108,7 @@ color: #FFFFFF;
 
 export default function Header() {
   const { state } = useContext(CartContext)
-  const cartAmount = state.cart.reduce((acc, curr) => curr.quantity + acc, 0)
+  const cartAmount = state.cart.reduce((acc, curr) => curr.qty + acc, 0)
   return (
     <HeaderStyles>
       <NavLink to="/">
@@ -120,7 +120,7 @@ export default function Header() {
         </NavLink>
         <NavLink className="cart" activeClassName="current" to="/cart">
           {state.cart.length > 0 && <span className="item-count">
-            {cartAmount}
+            {cartAmount ? cartAmount.toString() : 0}
           </span>}
           <Cart />
         </NavLink>

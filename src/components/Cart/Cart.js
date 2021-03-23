@@ -61,7 +61,6 @@ a {
 
 export default function Cart() {
   const { state } = useContext(CartContext)
-  console.log(state.cart)
 
   return (
     <CartStyles>
@@ -69,7 +68,7 @@ export default function Cart() {
       {state.cart.length > 0 &&
         <>
           {state.cart.map(cartItem => (
-            <CartItem key={`${cartItem.item.name}${cartItem.item.quantity}`} item={cartItem.item} quantity={cartItem.quantity} />
+            <CartItem key={`${cartItem.item.name}${cartItem.item.qty}`} item={cartItem.item} quantity={cartItem.qty} />
           ))}
           <p className="total">
             TOTAL: {state.total} USD

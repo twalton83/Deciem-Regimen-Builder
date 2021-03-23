@@ -1,21 +1,38 @@
 function add(state, payload) {
-  const { item, quantity } = payload
+  const { item, qty } = payload
+
+  if (state.cart.some(cartItem => cartItem.item.name === item.name)) return update(state, { ...payload, status: "existing" })
 
   return {
     ...state,
-    cart: [...state.cart, { item, quantity }]
+    cart: [...state.cart, { item, qty }]
   }
 }
 
 function update(state, payload) {
-  const { item, qty } = payload;
+  const { item, qty, status } = payload;
+  let updatedCart;
 
-  const updatedCart = state.cart.map(cartItem => {
-    if (cartItem.item.name === item.name) {
-      cartItem.quantity = qty
-    }
-    return cartItem
-  })
+  if (status === 'existing') {
+    updatedCart = state.cart.map(cartItem => {
+      if (cartItem.item.name === item.name) {
+        if (qty !== null) {
+          cartItem.qty += qty
+        }
+        else {
+          cartItem.qty = 0
+        }
+      }
+      return cartItem
+    })
+  } else {
+    updatedCart = state.cart.map(cartItem => {
+      if (cartItem.item.name === item.name) {
+        cartItem.qty = qty
+      }
+      return cartItem
+    })
+  }
   return { ...state, cart: updatedCart }
 }
 
